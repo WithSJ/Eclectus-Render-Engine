@@ -80,7 +80,7 @@ public:
 };
 
 std::ostream &operator<<(std::ostream &os, Vector const &vec) { 
-    return os <<"("<<vec.x<<","<<vec.y<<","<<vec.z<<")" ;
+    return os <<"Vector("<<vec.x<<","<<vec.y<<","<<vec.z<<")" ;
 }
 
 
