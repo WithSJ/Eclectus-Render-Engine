@@ -3,6 +3,7 @@
 #include "vector_lib.cpp"
 #include "color_lib.cpp"
 
+
 #include <chrono>
 using namespace std::chrono;
 
@@ -31,12 +32,18 @@ int main(int argc, char const *argv[])
     cout<<"\n#Time takes in microseconds: "<< duration.count() <<endl;
     cout<<"\n#Time takes in seconds: "<< d <<endl;
     
+    cout<<"\n#---Hex to int---\n\n";
+    cout<<"(ff) hex string to int : "<<hexToInt("ff")<<endl;
+
+
     cout<<"\n#---Color class---\n\n";
 
-    Color c1(1,0,0);
+    Color c1(255,0,0); // Color Object from constructor
     cout<<c1<<endl;
-    
 
+    cout<< "Color from hex(#ff0000)"<<endl;
+    Color c2 = Color::from_hex("#ff0000"); // Color Object from color hex
+    cout<<c2<<endl;
     
     return 0;
 }
