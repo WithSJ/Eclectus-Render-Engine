@@ -1,6 +1,7 @@
 #include <iostream>
 #include<ctime>
 #include "vector_lib.cpp"
+#include "color_lib.cpp"
 
 #include <chrono>
 using namespace std::chrono;
@@ -10,7 +11,7 @@ using namespace std;
 int main(int argc, char const *argv[])
 {
     auto start = high_resolution_clock::now();
-
+    cout<<"#---Vector class---\n\n";
     Vector v1(1,-2,-2);
     Vector v2(3,6,9);
     cout<<"Vector v1,v2 : "<< v1 <<v2<<endl;
@@ -29,7 +30,13 @@ int main(int argc, char const *argv[])
     float d = float(duration.count())/1000000.0;
     cout<<"\n#Time takes in microseconds: "<< duration.count() <<endl;
     cout<<"\n#Time takes in seconds: "<< d <<endl;
- 
+    
+    cout<<"\n#---Color class---\n\n";
+
+    Color c1(1,0,0);
+    cout<<c1<<endl;
+    
+
     
     return 0;
 }
