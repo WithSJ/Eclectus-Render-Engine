@@ -82,14 +82,7 @@ if __name__ == "__main__":
     print("\n## DotProduct of v1 and v2",v1,v2)
     print(v1.dot_product(v2))
 
-    for i in range(1,100):
-        v1 *= i
-        v1 += v1
-        v1 /= i
-        v1.magnitude()
-
     end = time.time()
-    print(v1)
-    print("\n#Time taken :",end-start)
+    print("\n#Time taken in Seconds :",end-start)
 
     
