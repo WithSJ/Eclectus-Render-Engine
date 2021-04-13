@@ -1,4 +1,3 @@
-import math
 import ctypes
 from utils import wrap_func
 
