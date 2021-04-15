@@ -28,6 +28,62 @@ public:
         Color new_col(hexToInt(R),hexToInt(G),hexToInt(B));
         return  new_col;
     }
+
+    Color operator +(Color col)
+    {
+        col.r += this->r;
+        col.b += this->b;
+        col.g += this->g;
+        
+        col.r = (col.r > 255)? 255:col.r;
+        col.b = (col.b > 255)? 255:col.b;
+        col.g = (col.g > 255)? 255:col.g;
+
+        return  col;
+    }
+
+    Color operator -(Color col)
+    {
+        col.r -= this->r;
+        col.b -= this->b;
+        col.g -= this->g;
+        
+        col.r = (col.r < 0)? 0:col.r;
+        col.b = (col.b < 0)? 0:col.b;
+        col.g = (col.g < 0)? 0:col.g;
+
+        return  col;
+    }
+
+    Color operator *(short int num)
+    {
+        Color col;
+        col.r = this->r * num;
+        col.b = this->b * num;
+        col.g = this->g * num;
+        
+        col.r = (col.r > 255)? 255:col.r;
+        col.b = (col.b > 255)? 255:col.b;
+        col.g = (col.g > 255)? 255:col.g;
+
+        return  col;
+    }
+
+    Color operator /(short int num)
+    {
+        Color col;
+        col.r = this->r / num;
+        col.b = this->b / num;
+        col.g = this->g / num;
+        
+        col.r = (col.r < 0)? 0:col.r;
+        col.b = (col.b < 0)? 0:col.b;
+        col.g = (col.g < 0)? 0:col.g;
+
+        return  col;
+    }
+
+
 };
 
 std::ostream &operator<<(std::ostream &os, Color const &col) { 
