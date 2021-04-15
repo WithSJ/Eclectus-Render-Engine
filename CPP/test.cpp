@@ -39,12 +39,18 @@ int main(int argc, char const *argv[])
 
     cout<<"\n#---Color class---\n\n";
 
-    Color c1(255,0,0); // Color Object from constructor
+    Color c1(30,63,255); // Color Object from constructor
     cout<<c1<<endl;
 
-    cout<< "Color from hex(#ff0000)"<<endl;
-    Color c2 = Color::from_hex("#ff0000"); // Color Object from color hex
+    cout<< "Color from hex(#AABBff)"<<endl;
+    Color c2 = Color::from_hex("#AABBff"); // Color Object from color hex
     cout<<c2<<endl;
+    cout<< "\n#Color +-*/ operator"<<endl<<endl;
+    cout<<c1 <<" + "<<c2<<" : "<<c1 + c2<<endl<<endl;
+    cout<<c2 <<" - "<<c1<<" : "<<c2 + c1<<endl<<endl;
+    cout<<c1 <<" * "<<2<<" : "<<c1 * 2<<endl<<endl;
+    cout<<c2 <<" / "<<10<<" : "<<c2 / 10<<endl<<endl;
+
     
     return 0;
 }
