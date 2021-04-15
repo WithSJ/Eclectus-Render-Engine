@@ -83,6 +83,22 @@ public:
         return  col;
     }
 
+    Color operator [](short int index)
+    { // Return Index Color
+        switch (index)
+        {
+            case 0: return this->r;
+                    break;
+            case 1: return this->b;
+                    break;
+            case 2: return this->g;
+                    break;
+        
+            default: throw std::out_of_range("Color are RGB use 0,1,2 for get values");
+                    break;
+        }
+    }
+
 
 };
 

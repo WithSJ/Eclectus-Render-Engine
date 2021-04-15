@@ -51,6 +51,7 @@ int main(int argc, char const *argv[])
     cout<<c1 <<" * "<<2<<" : "<<c1 * 2<<endl<<endl;
     cout<<c2 <<" / "<<10<<" : "<<c2 / 10<<endl<<endl;
 
-    
+    cout<<"Use [] operator " <<c1<<" : "<<c1[0]<<endl;
+
     return 0;
 }
