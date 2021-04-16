@@ -2,7 +2,7 @@
 #include <iostream>
 #include<ctime>
 #include "Engine/vector_lib.cpp"
-#include "Engine/color_lib.cpp"
+#include "Engine/image_lib.cpp"
 
 
 #include <chrono>
@@ -52,6 +52,28 @@ int main(int argc, char const *argv[])
     cout<<c2 <<" / "<<10<<" : "<<c2 / 10<<endl<<endl;
 
     cout<<"Use [] operator " <<c1<<" : "<<c1[0]<<endl;
+
+    //Read Write PPM Image
+    cout<<"\n\n#Use of PPM Image"<<endl;
+
+    Image img(3,2);
+
+    Color red(255,0,0);
+    Color green(0,255,0);
+    Color blue(0,0,255);
+    Color yellow(255,255,0);
+    Color white(255,255,255);
+    Color black(0,0,0);
+
+    img.PIXCELS[0][0] = red;
+    img.PIXCELS[0][1] = green;
+    img.PIXCELS[0][2] = blue;
+    
+    img.PIXCELS[1][0] = yellow;
+    img.PIXCELS[1][1] = white;
+    img.PIXCELS[1][2] = black;
+    
+    img.write_ppm("test.ppm");
 
     return 0;
 }
