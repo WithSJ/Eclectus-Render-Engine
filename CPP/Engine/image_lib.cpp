@@ -21,6 +21,11 @@ class Image
             
         }
 
+        void set_pixcel(short int x, short int y, Color col)
+        {
+            this->PIXCELS[x][y] = col;
+        }
+
         void write_ppm(std::string filename)
         {
             std::ofstream PPM(filename);
