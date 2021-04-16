@@ -1,3 +1,4 @@
+#include <fstream>
 #include "color_lib.cpp"
 
 class Image
@@ -18,6 +19,29 @@ class Image
                 this->PIXCELS[i] = new Color [HEIGTH];
             }
             
+        }
+
+        void write_ppm(std::string filename)
+        {
+            std::ofstream PPM(filename);
+            if(PPM.is_open())
+            {
+                PPM << "P3 " << this->HEIGTH << " " << this->WIDTH << "\n";
+                PPM << "255\n";
+                for (short int i = 0; i < this->WIDTH; i++)
+                {
+                    for (short int j = 0; j < this->HEIGTH; j++)
+                    {
+                        PPM << this->PIXCELS[i][j].r << " " << this->PIXCELS[i][j].g << " " << this->PIXCELS[i][j].b << " ";
+                    }
+                    PPM<<"\n";
+                }
+                
+
+            }else{
+                throw std::runtime_error("File not open");
+            }
+
         }
     
     
