@@ -61,17 +61,22 @@ int main(int argc, char const *argv[])
     Color red(255,0,0);
     Color green(0,255,0);
     Color blue(0,0,255);
-    Color yellow(255,255,0);
-    Color white(255,255,255);
-    Color black(0,0,0);
-
-    img.PIXCELS[0][0] = red;
-    img.PIXCELS[0][1] = green;
-    img.PIXCELS[0][2] = blue;
     
-    img.PIXCELS[1][0] = yellow;
-    img.PIXCELS[1][1] = white;
-    img.PIXCELS[1][2] = black;
+    img.set_pixcel(0,0,red);
+    cout<<red<<endl;
+    img.set_pixcel(0,1,green);
+    cout<<green<<endl;
+    img.set_pixcel(0,2,blue);
+    cout<<blue<<endl;
+
+    img.set_pixcel(1,0,red+green);
+    cout<<red+green<<endl;
+    img.set_pixcel(1,1,red+green+blue);
+    cout<<red+green+blue<<endl;
+
+    img.set_pixcel(1,2,red*0);
+    cout<<red*0<<endl;
+
     
     img.write_ppm("test.ppm");
 
