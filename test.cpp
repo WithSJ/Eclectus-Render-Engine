@@ -73,7 +73,7 @@ int main(int argc, char const *argv[])
     cout<<red*0<<endl;
 
     
-    img.write_ppm("test.ppm");
+    img.write_ppm("Eclectus_test.ppm");
     
     auto stop = high_resolution_clock::now();
     auto duration = duration_cast<microseconds>(stop - start);
