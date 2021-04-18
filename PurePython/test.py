@@ -1,1 +1,0 @@
-#Testing of Eclectus PurePython Engine

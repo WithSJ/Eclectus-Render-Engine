@@ -1,1 +1,0 @@
-#PythonWithC Eclectus Engine Start 
