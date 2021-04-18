@@ -27,11 +27,6 @@ int main(int argc, char const *argv[])
 
     cout<<"\n#Dot Product v1,v2 : "<< v1.dot_product(v2) << endl;
 
-    auto stop = high_resolution_clock::now();
-    auto duration = duration_cast<microseconds>(stop - start);
-    float d = float(duration.count())/1000000.0;
-    cout<<"\n#Time takes in microseconds: "<< duration.count() <<endl;
-    cout<<"\n#Time takes in seconds: "<< d <<endl;
     
     cout<<"\n#---Hex to int---\n\n";
     cout<<"(ff) hex string to int : "<<hexToInt("ff")<<endl;
@@ -79,6 +74,12 @@ int main(int argc, char const *argv[])
 
     
     img.write_ppm("test.ppm");
-
+    
+    auto stop = high_resolution_clock::now();
+    auto duration = duration_cast<microseconds>(stop - start);
+    float d = float(duration.count())/1000000.0;
+    cout<<"\n#Time takes in microseconds: "<< duration.count() <<endl;
+    cout<<"\n#Time takes in seconds: "<< d <<endl;
+    
     return 0;
 }
