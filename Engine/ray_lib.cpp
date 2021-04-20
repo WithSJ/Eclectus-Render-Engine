@@ -2,6 +2,9 @@
 
 class Ray
 {
+    //Define by Point and Direction
+    //Work as light that capture an object show to the camera
+    
     private:
         /* data */
     public:
