@@ -6,6 +6,8 @@
 
 class Sphere
 {
+    // Sphere is a object that we use in our 3d space to test our RayTracer
+    // Sphere is Define by Center and Radius
     public:
         Vector Center;
         float Radius; 
@@ -20,6 +22,8 @@ class Sphere
 
         float intersects(Ray ray)
         {
+            // Calculate that ray is touch the Sphere or not 
+            
             Vector sphere_to_ray = ray.Origin - this->Center;
 
             float a = 1.0;
