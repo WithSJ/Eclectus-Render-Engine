@@ -18,6 +18,19 @@ class RenderEngine
             //Here Code that we cast Ray each pixcel 
             // and check that scene.Objects are interset with ray.
 
+            for(short int i; i <= scene.Width; i++)
+            {
+                float x = x0 + i * xstep;
+                
+                for(short int j; j <= scene.Height; j++)
+                {
+                    float y = y0 + j * ystep;
+                    //  Now we calculated X,Y of pixcel 
+
+
+                }
+            }
+
             return pixcels // Return Rendered image data
         }
 };
