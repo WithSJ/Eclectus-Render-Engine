@@ -58,7 +58,11 @@ class RenderEngine
         Color ray_trace(Ray ray, Scene scene)
         {
             Color color(0,0,0);
-            //[Code Here] the nearest Object that hit by Ray.
+            // Find NearestObject hit by the Ray.
+            // calculate hit_pos
+            // return color of object_hit
+            //[Code Here] 
+
 
 
             return color;
