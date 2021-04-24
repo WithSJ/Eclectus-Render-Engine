@@ -63,8 +63,21 @@ class RenderEngine
             // return color of object_hit
             //[Code Here] 
 
+            NearestObject nearestObj_Data;
+            
+            // Get Nearest object data
+            nearestObj_Data = find_nearest(ray,scene); 
 
+            // if Radius is zero thats means there no onject
+            if(nearestObj_Data.object_hit.Radius == 0.0)
+                return color
+            
+            // Calculate Ray where hit.
+            Vector hit_pos = ray.Origin + ray.Direction * nearestObj_Data.min_distance;
 
+            // get color data 
+            color = color_at(nearestObj_Data.object_hit, hit_pos, scene);
+            
             return color;
         }
 
