@@ -1,5 +1,7 @@
 #include "scene_lib.cpp"
 #include "image_lib.cpp"
+#include "color_lib.cpp"
+#include "ray_lib.cpp"
 
 class RenderEngine
 {
@@ -32,5 +34,15 @@ class RenderEngine
             }
 
             return pixcels // Return Rendered image data
+        }
+
+
+        Color ray_trace(Ray ray, Scene scene)
+        {
+            Color color(0,0,0);
+            //[Code Here] the nearest Object that hit by Ray.
+
+
+            return color;
         }
 };
