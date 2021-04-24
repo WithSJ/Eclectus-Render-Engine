@@ -3,6 +3,7 @@
 #include "color_lib.cpp"
 #include "ray_lib.cpp"
 #include "sphere_lib.cpp"
+#include "util.cpp"
 
 class RenderEngine
 {
@@ -43,7 +44,17 @@ class RenderEngine
             return pixcels // Return Rendered image data
         }
 
+        NearestObject find_nearest(Ray ray, Scene scene)
+        {
+            NearestObject nearestObj_Data;
+            // itrate all Objects in scene.objects and find distance where 
+            // Ray intersects to object if that distance less than min distance than
+            // return that min_distance and object that hit
+            // [Code Here]
+            
+            return nearestObj_Data;
 
+        }
         Color ray_trace(Ray ray, Scene scene)
         {
             Color color(0,0,0);
