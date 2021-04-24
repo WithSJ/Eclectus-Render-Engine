@@ -10,7 +10,7 @@ class Sphere
     // Sphere is Define by Center and Radius
     public:
         Vector Center;
-        float Radius; 
+        float Radius=0.0; 
         Color Material;
 
         Sphere(Vector center, float radius, Color material)
