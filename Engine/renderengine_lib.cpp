@@ -2,6 +2,7 @@
 #include "image_lib.cpp"
 #include "color_lib.cpp"
 #include "ray_lib.cpp"
+#include "sphere_lib.cpp"
 
 class RenderEngine
 {
@@ -44,5 +45,13 @@ class RenderEngine
 
 
             return color;
+        }
+
+        Color color_at(Sphere object_hit, Vector hit_pos, Scene scene)
+        {
+            // Return Hit object color
+            // Currently it return only color of object hit.
+            // later we use hit_pos and scene
+            return object_hit.material;
         }
 };
