@@ -30,6 +30,12 @@ class RenderEngine
                     float y = y0 + j * ystep;
                     //  Now we calculated X,Y of pixcel 
 
+                    Ray ray_cast(scene.Camera, Vector(x,y) - scene.Camera)
+                    // Casting a Ray using Camera and X,Y pos
+
+                    pixcels.set_pixcel(i,j,ray_trace(ray_cast,scene))
+                    // set color values in Pixcels matrix (Image data)
+
 
                 }
             }
