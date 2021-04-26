@@ -51,7 +51,18 @@ class RenderEngine
             // Ray intersects to object if that distance less than min distance than
             // return that min_distance and object that hit
             // [Code Here]
-            
+            nearestObj_Data.min_distance = scene.Objects[0].intersects(ray);
+
+            for(Sphere object : scene.Objects)
+            {
+                if(nearestObj_Data.min_distance < object.intersects(ray))
+                {
+                    nearestObj_Data.min_distance = object.intersects(ray);
+                    nearestObj_Data.object_hit = object;
+
+                }
+            }
+
             return nearestObj_Data;
 
         }
