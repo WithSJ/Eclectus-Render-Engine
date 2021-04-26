@@ -1,4 +1,3 @@
-#include "vector_lib.cpp"
 #include "sphere_lib.cpp"
 
 class Scene
