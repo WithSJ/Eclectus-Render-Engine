@@ -1,7 +1,6 @@
 #include<math.h>
 
-#include "vector_lib.cpp"
-#include "color_lib.cpp"
+#include "image_lib.cpp"
 #include "ray_lib.cpp"
 
 class Sphere
@@ -41,7 +40,15 @@ class Sphere
                     return distance;
             }
 
-            return NULL;
+            return 0.0;
 
         }
 };
+
+
+typedef struct
+{
+    // Data
+    float min_distance = 0.0;
+    Sphere object_hit;
+}NearestObject;
