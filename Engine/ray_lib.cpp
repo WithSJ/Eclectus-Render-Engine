@@ -13,6 +13,6 @@ class Ray
         Ray(Vector origin, Vector direction)
         {
             this->Origin = origin;
-            this->Direction = direction.normalize();
+            this->Direction = direction.normalize(direction);
         }
 };
