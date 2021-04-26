@@ -1,16 +1,12 @@
 #include "scene_lib.cpp"
-#include "image_lib.cpp"
-#include "color_lib.cpp"
-#include "ray_lib.cpp"
-#include "sphere_lib.cpp"
-#include "util.cpp"
+using namespace std;
 
 class RenderEngine
 {
     public:
         Image render(Scene scene)
         {
-            float aspect_ratio = scene.Width / scene.Height
+            float aspect_ratio = scene.Width / scene.Height;
             float x0 = -1.0, x1 = +1.0;
             float y0 = -1.0 / aspect_ratio, y1 = +1.0 / aspect_ratio;
 
@@ -31,17 +27,17 @@ class RenderEngine
                     float y = y0 + j * ystep;
                     //  Now we calculated X,Y of pixcel 
 
-                    Ray ray_cast(scene.Camera, Vector(x,y) - scene.Camera)
+                    Ray ray_cast(scene.Camera, Vector(x,y) - scene.Camera);
                     // Casting a Ray using Camera and X,Y pos
 
-                    pixcels.set_pixcel(i,j,ray_trace(ray_cast,scene))
+                    pixcels.set_pixcel(i,j,ray_trace(ray_cast,scene));
                     // set color values in Pixcels matrix (Image data)
 
 
                 }
             }
 
-            return pixcels // Return Rendered image data
+            return pixcels; // Return Rendered image data
         }
 
         NearestObject find_nearest(Ray ray, Scene scene)
@@ -52,7 +48,7 @@ class RenderEngine
             // return that min_distance and object that hit
             // [Code Here]
             nearestObj_Data.min_distance = scene.Objects[0].intersects(ray);
-
+            
             for(Sphere object : scene.Objects)
             {
                 if(nearestObj_Data.min_distance < object.intersects(ray))
@@ -81,7 +77,7 @@ class RenderEngine
 
             // if Radius is zero thats means there no onject
             if(nearestObj_Data.object_hit.Radius == 0.0)
-                return color
+                return color;
             
             // Calculate Ray where hit.
             Vector hit_pos = ray.Origin + ray.Direction * nearestObj_Data.min_distance;
@@ -97,6 +93,6 @@ class RenderEngine
             // Return Hit object color
             // Currently it return only color of object hit.
             // later we use hit_pos and scene
-            return object_hit.material;
+            return object_hit.Material;
         }
 };
