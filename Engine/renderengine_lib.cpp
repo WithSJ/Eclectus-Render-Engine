@@ -49,8 +49,9 @@ class RenderEngine
             // [Code Here]
             nearestObj_Data.min_distance = scene.Objects[0].intersects(ray);
             
-            for(Sphere object : scene.Objects)
+            for(short int i = 0;i<scene.NumberOfObjects;i++)
             {
+                Sphere object = scene.Objects[i];
                 if(nearestObj_Data.min_distance < object.intersects(ray))
                 {
                     nearestObj_Data.min_distance = object.intersects(ray);
