@@ -13,10 +13,10 @@ class Image
         {   this->HEIGTH = height; // Assigen Height and Width
             this->WIDTH = width;
             
-            this->PIXCELS = new Color* [WIDTH]; // Create pixcels accorfing Height and Width
-            for (short int i = 0; i < WIDTH; i++)
+            this->PIXCELS = new Color* [height]; // Create pixcels accorfing Height and Width
+            for (short int i = 0; i < height; i++)
             {
-                this->PIXCELS[i] = new Color [HEIGTH];
+                this->PIXCELS[i] = new Color [width];
             }
             
         }
