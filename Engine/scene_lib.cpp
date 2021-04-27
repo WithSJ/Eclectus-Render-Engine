@@ -8,12 +8,14 @@ class Scene
     public:
         Vector Camera;
         Sphere* Objects; 
+        short int NumberOfObjects;
         short int Width, Height;
         
-        Scene(Vector camera, Sphere* objects, short int width, short int height)
+        Scene(Vector camera, Sphere objects[], short int number_of_objects, short int width, short int height)
         {
             this->Camera = camera;
             this->Objects = objects;
+            this->NumberOfObjects = number_of_objects;
             this->Width = width;
             this->Height = height;
         }

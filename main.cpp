@@ -11,9 +11,8 @@ int main(int argc, char const *argv[])
     Vector Camera(0,0,-1);
     Color col(255,0,0);
     Sphere obj1(Vector(0,0,0),0.5,col);
-    
-    Sphere Objects = {obj1};
-    Scene scene(Camera,&Objects,WIDTH,HEIGHT);
+    Sphere Objects[] = {obj1};
+    Scene scene(Camera,Objects,1,WIDTH,HEIGHT);
 
     RenderEngine engine;
 
