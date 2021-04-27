@@ -12,6 +12,7 @@ class Sphere
         float Radius=0.0; 
         Color Material;
 
+        Sphere(){}
         Sphere(Vector center, float radius, Color material)
         {
             this->Center = center;
