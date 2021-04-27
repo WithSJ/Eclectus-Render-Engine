@@ -31,12 +31,12 @@ class Image
             std::ofstream PPM(filename);
             if(PPM.is_open())
             {   
-                PPM << "P3 " << this->HEIGTH << " " << this->WIDTH << "\n";
+                PPM << "P3 " << this->WIDTH << " " << this->HEIGTH << "\n";
                 PPM << "255\n";
                 PPM << "#Image Render in Eclectus RayCasting Engine.\n";
-                for (short int i = 0; i < this->WIDTH; i++)
+                for (short int i = 0; i < this->HEIGTH; i++)
                 {
-                    for (short int j = 0; j < this->HEIGTH; j++)
+                    for (short int j = 0; j < this->WIDTH; j++)
                     {
                         PPM << this->PIXCELS[i][j].r << " " << this->PIXCELS[i][j].g << " " << this->PIXCELS[i][j].b << " ";
                     }
