@@ -1,5 +1,4 @@
 #include "scene_lib.cpp"
-using namespace std;
 
 class RenderEngine
 {
@@ -18,13 +17,13 @@ class RenderEngine
             //Here Code that we cast Ray each pixcel 
             // and check that scene.Objects are interset with ray.
 
-            for(short int i; i <= scene.Width; i++)
+            for(short int i=0; i < scene.Height; i++)
             {
-                float x = x0 + i * xstep;
+                float y = y0 + i * ystep;
                 
-                for(short int j; j <= scene.Height; j++)
+                for(short int j=0; j < scene.Width; j++)
                 {
-                    float y = y0 + j * ystep;
+                    float x = x0 + j * xstep;
                     //  Now we calculated X,Y of pixcel 
 
                     Ray ray_cast(scene.Camera, Vector(x,y) - scene.Camera);
@@ -48,7 +47,8 @@ class RenderEngine
             // return that min_distance and object that hit
             // [Code Here]
             nearestObj_Data.min_distance = scene.Objects[0].intersects(ray);
-            
+            nearestObj_Data.object_hit = scene.Objects[0];
+
             for(short int i = 0;i<scene.NumberOfObjects;i++)
             {
                 Sphere object = scene.Objects[i];
@@ -65,7 +65,7 @@ class RenderEngine
         }
         Color ray_trace(Ray ray, Scene scene)
         {
-            Color color(0,0,0);
+            Color color(0,0,10); // Background Color
             // Find NearestObject hit by the Ray.
             // calculate hit_pos
             // return color of object_hit
