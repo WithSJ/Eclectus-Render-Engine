@@ -51,7 +51,7 @@ int main(int argc, char const *argv[])
     //Read Write PPM Image
     cout<<"\n\n#Use of PPM Image"<<endl;
 
-    Image img(3,2);
+    Image img(2,3);
 
     Color red(255,0,0);
     Color green(0,255,0);
