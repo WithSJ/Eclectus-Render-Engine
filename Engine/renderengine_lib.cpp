@@ -82,7 +82,7 @@ class RenderEngine
                 Sphere object = scene.Objects[i];
                 float distance = object.intersects(ray);
                 
-                if(distance > 0.0)
+                if(distance >= 0.0)
                 {
                     // // Calculate Ray where hit.
                     Vector hit_pos = ray.Origin + ray.Direction * distance;

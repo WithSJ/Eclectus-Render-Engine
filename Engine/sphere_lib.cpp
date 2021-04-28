@@ -35,13 +35,11 @@ class Sphere
             float discriminant = b * b - 4 * a * c;
 
             if (discriminant >= 0)
-            {
-                float distance = (-b - sqrt(discriminant)) / 2;
-                if(distance>0)
-                    return distance;
+            {   
+                    return (-b - sqrt(discriminant) ) / (2.0 * a);
             }
 
-            return 0.0;
+            return -1.0;
 
         }
 };
