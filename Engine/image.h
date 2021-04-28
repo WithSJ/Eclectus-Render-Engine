@@ -1,5 +1,8 @@
+#ifndef IMAGE_H
+#define IMAGE_H
+
 #include <fstream>
-#include "color_lib.cpp"
+#include "color.h"
 
 class Image
 {
@@ -56,3 +59,5 @@ class Image
 
         
 };
+
+#endif

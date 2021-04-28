@@ -1,4 +1,7 @@
-#include "vector_lib.cpp"
+#ifndef RAY_H
+#define RAY_H
+
+#include "vector.h"
 
 class Ray
 {
@@ -16,3 +19,5 @@ class Ray
             this->Direction = direction.normalize(direction);
         }
 };
+
+#endif

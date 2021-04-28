@@ -1,7 +1,10 @@
+#ifndef SPHERE_H
+#define SPHERE_H
+
 #include<math.h>
 
-#include "image_lib.cpp"
-#include "ray_lib.cpp"
+#include "image.h"
+#include "ray.h"
 
 class Sphere
 {
@@ -51,3 +54,5 @@ typedef struct
     float min_distance = 0.0;
     Sphere object_hit;
 }NearestObject;
+
+#endif

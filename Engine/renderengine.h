@@ -1,4 +1,7 @@
-#include "scene_lib.cpp"
+#ifndef RENDERENGINE_H
+#define RENDERENGINE_H
+
+#include "scene.h"
 
 class RenderEngine
 {
@@ -110,3 +113,5 @@ class RenderEngine
             return object_hit.Material;
         }
 };
+
+#endif

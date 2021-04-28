@@ -1,4 +1,7 @@
-#include "sphere_lib.cpp"
+#ifndef SCENE_H
+#define SCENE_H
+
+#include "sphere.h"
 
 class Scene
 {
@@ -20,3 +23,5 @@ class Scene
             this->Height = height;
         }
 };
+
+#endif

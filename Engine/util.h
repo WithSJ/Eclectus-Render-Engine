@@ -1,3 +1,6 @@
+#ifndef UTIL_H
+#define UTIL_H
+
 #include <sstream>
 
 int hexToInt(std::string hex_str)
@@ -8,3 +11,5 @@ int hexToInt(std::string hex_str)
     ss >> x;
     return x;
 }
+
+#endif

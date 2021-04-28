@@ -1,3 +1,6 @@
+#ifndef VECTOR_H
+#define VECTOR_H
+
 #include<math.h>
 
 class Vector
@@ -83,5 +86,4 @@ std::ostream &operator<<(std::ostream &os, Vector const &vec) {
     return os <<"Vector("<<vec.x<<","<<vec.y<<","<<vec.z<<")" ;
 }
 
-
-
+#endif

@@ -1,4 +1,7 @@
-#include "util.cpp"
+#ifndef COLOR_H
+#define COLOR_H
+
+#include "util.h"
 
 class Color 
 {
@@ -106,7 +109,4 @@ std::ostream &operator<<(std::ostream &os, Color const &col) {
     return os <<"Color("<<col.r<<","<<col.g<<","<<col.b<<")" ;
 }
 
-
-
-
-
+#endif

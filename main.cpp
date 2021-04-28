@@ -1,7 +1,7 @@
 #include <iostream>
 #include <chrono>
 
-#include "Engine/renderengine_lib.cpp"
+#include "Engine/renderengine.h"
 
 using namespace std::chrono;
 

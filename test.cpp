@@ -1,8 +1,8 @@
 //Testing Of Modulles
 #include <iostream>
 #include<ctime>
-#include "Engine/vector_lib.cpp"
-#include "Engine/image_lib.cpp"
+#include "Engine/vector.h"
+#include "Engine/image.h"
 
 
 #include <chrono>
