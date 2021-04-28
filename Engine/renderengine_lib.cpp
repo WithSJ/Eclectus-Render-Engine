@@ -5,7 +5,7 @@ class RenderEngine
     public:
         Image render(Scene scene)
         {
-            float aspect_ratio = scene.Width / scene.Height;
+            float aspect_ratio = float(scene.Width) / scene.Height;
             float x0 = -1.0, x1 = +1.0;
             float y0 = -1.0 / aspect_ratio, y1 = +1.0 / aspect_ratio;
 
