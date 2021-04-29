@@ -45,6 +45,19 @@ public:
         return  col;
     }
 
+    Color operator +(short int num)
+    {   Color col;
+        col.r = this->r + num;
+        col.b = this->b + num;
+        col.g = this->g + num;
+        
+        col.r = (col.r > 255)? 255:col.r;
+        col.b = (col.b > 255)? 255:col.b;
+        col.g = (col.g > 255)? 255:col.g;
+
+        return  col;
+    }
+
     Color operator -(Color col)
     {
         col.r -= this->r;
@@ -57,6 +70,21 @@ public:
 
         return  col;
     }
+
+    Color operator -(short int num)
+    {
+        Color col;
+        col.r = this->r - num;
+        col.b = this->b - num;
+        col.g = this->g - num;
+        
+        col.r = (col.r < 0)? 0:col.r;
+        col.b = (col.b < 0)? 0:col.b;
+        col.g = (col.g < 0)? 0:col.g;
+
+        return  col;
+    }
+
 
     Color operator *(short int num)
     {
