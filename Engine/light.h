@@ -4,14 +4,14 @@
 #include "vector.h"
 #include "color.h"
 
-class light
+class Light
 {
 private:
     /* data */
 public:
     Vector position;
     Color color;
-    light(Vector position, Color color)
+    Light(Vector position, Color color)
     {
         this->position = position;
         this->color = color;
