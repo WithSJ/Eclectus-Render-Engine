@@ -89,8 +89,9 @@ class RenderEngine
                 {
                     // // Calculate Ray where hit.
                     Vector hit_pos = ray.Origin + ray.Direction * distance;
+                    Vector hit_normal = object.normal(hit_pos);
 
-                    return color_at(object,hit_pos,scene);
+                    return color_at(object,hit_pos,hit_normal,scene);
                 }
             }
 
@@ -105,12 +106,30 @@ class RenderEngine
             return color;
         }
 
-        Color color_at(Sphere object_hit, Vector hit_pos, Scene scene)
+        Color color_at(Sphere object_hit, Vector hit_pos, Vector normal, Scene scene)
         {
             // Return Hit object color
             // Currently it return only color of object hit.
-            // later we use hit_pos and scene
-            return object_hit.Material;
+            // later we use hit_pos,normal and scene 
+
+            Vector to_cam = scene.Camera - hit_pos;
+            Color color;
+            for(short int i = 0; i < scene.NumberOfLigths; i++)
+            {
+                Ray to_light = Ray(hit_pos, scene.Lights[i].position - hit_pos);
+
+                // Diffuse Shading (We use Lambert Shading Model for Diffuse)
+                
+                float NL = std::max<float>(normal.dot_product(to_light.Direction),0.0);
+
+                float diffuse = 1.0;
+                
+                // std::cout<<object_hit.Material - (255-short(diffuse * NL * 255 ))<<"\n";
+                color = object_hit.Material - (255-short(diffuse * NL * 255));
+                
+            }
+            // return object_hit.Material;
+            return color;
         }
 };
 

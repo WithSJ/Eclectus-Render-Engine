@@ -45,6 +45,11 @@ class Sphere
             return -1.0;
 
         }
+
+        Vector normal(Vector surface_point)
+        {
+            return (surface_point - this->Center).normalize(surface_point);
+        }
 };
 
 
