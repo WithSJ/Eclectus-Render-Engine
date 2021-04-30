@@ -41,31 +41,6 @@ class RenderEngine
 
             return pixcels; // Return Rendered image data
         }
-
-        // NearestObject find_nearest(Ray ray, Scene scene)
-        // {
-        //     NearestObject nearestObj_Data;
-        //     // itrate all Objects in scene.objects and find distance where 
-        //     // Ray intersects to object if that distance less than min distance than
-        //     // return that min_distance and object that hit
-        //     // [Code Here]
-        //     nearestObj_Data.min_distance = scene.Objects[0].intersects(ray);
-        //     nearestObj_Data.object_hit = scene.Objects[0];
-
-        //     for(short int i = 0;i<scene.NumberOfObjects;i++)
-        //     {
-        //         Sphere object = scene.Objects[i];
-        //         if(nearestObj_Data.min_distance < object.intersects(ray))
-        //         {
-        //             nearestObj_Data.min_distance = object.intersects(ray);
-        //             nearestObj_Data.object_hit = object;
-
-        //         }
-        //     }
-
-        //     return nearestObj_Data;
-
-        // }
         
         Color ray_trace(Ray ray, Scene scene)
         {
@@ -74,11 +49,6 @@ class RenderEngine
             // calculate hit_pos
             // return color of object_hit
             //[Code Here] 
-
-            // NearestObject nearestObj_Data;
-            
-            // Get Nearest object data
-            // nearestObj_Data = find_nearest(ray,scene); 
 
             for(short int i = 0;i<scene.NumberOfObjects;i++)
             {
@@ -94,14 +64,6 @@ class RenderEngine
                     return color_at(object,hit_pos,hit_normal,scene);
                 }
             }
-
-            // if Radius is zero thats means there no onject
-            // // if(nearestObj_Data.object_hit.Radius == 0.0)
-            // //     return color;
-
-
-            // // get color data 
-            // color = color_at(nearestObj_Data.object_hit, hit_pos, scene);
             
             return color;
         }

@@ -52,12 +52,4 @@ class Sphere
         }
 };
 
-
-typedef struct
-{
-    // Data
-    float min_distance = 0.0;
-    Sphere object_hit;
-}NearestObject;
-
 #endif
