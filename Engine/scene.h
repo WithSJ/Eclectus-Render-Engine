@@ -4,11 +4,13 @@
 #include "sphere.h"
 #include "light.h"
 
+/**
+ * @brief Scene is a container so we can put all objects, camera, lights
+ * it's work as enviroment or world that hold all things.
+ * 
+ */
 class Scene
 {
-    // Scene is a container that have all objects including camera.
-    // it will use in render.
-
     public:
         Vector Camera;
         Sphere* Objects; 

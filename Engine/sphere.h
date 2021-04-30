@@ -6,10 +6,16 @@
 #include "image.h"
 #include "ray.h"
 
+/**
+ * @brief Sphere is Object that we use in our 3d space 
+ * Sphere is define by Center point and Radius 
+ * using both we can genrate all surface point of sphere. 
+ * 
+ * It's easy to calculate and we use it for rendering testing
+ */
 class Sphere
 {
-    // Sphere is a object that we use in our 3d space to test our RayTracer
-    // Sphere is Define by Center and Radius
+    
     public:
         Vector Center;
         float Radius=0.0; 
@@ -23,9 +29,15 @@ class Sphere
             this->Material = material;
         }
 
+        /**
+         * @brief checking ray is interset with object than what is distance
+         * 
+         * @param ray 
+         * @return float 
+         */
         float intersects(Ray ray)
         {
-            // Calculate that ray is touch the Sphere or not 
+            
             
             Vector sphere_to_ray = ray.Origin - this->Center;
 
@@ -39,13 +51,21 @@ class Sphere
 
             if (discriminant >= 0)
             {   
+                    // calculate distance from camera to object
                     return (-b - sqrt(discriminant) ) / (2.0 * a);
             }
 
             return -1.0;
 
         }
-
+        
+        /**
+         * @brief Calculate normal values where ray hit 
+         * it will help in shading.
+         * 
+         * @param surface_point 
+         * @return Vector 
+         */
         Vector normal(Vector surface_point)
         {
             return (surface_point - this->Center).normalize(surface_point);

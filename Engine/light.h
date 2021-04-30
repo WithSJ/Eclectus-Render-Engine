@@ -4,6 +4,10 @@
 #include "vector.h"
 #include "color.h"
 
+/**
+ * @brief Light have Postion and Color Values using this values we can genrated light effects.
+ * 
+ */
 class Light
 {
 private:
@@ -11,6 +15,7 @@ private:
 public:
     Vector position;
     Color color;
+    
     Light(Vector position, Color color)
     {
         this->position = position;

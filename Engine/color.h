@@ -2,7 +2,10 @@
 #define COLOR_H
 
 #include "util.h"
-
+/**
+ * @brief Color class hold RGB values and we can mix colors or operate any +-/* with color
+ * 
+ */
 class Color 
 {
 public:

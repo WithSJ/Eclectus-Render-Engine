@@ -3,6 +3,11 @@
 
 #include<math.h>
 
+/**
+ * @brief Vector is use for in so many place as space, point direction and other things.
+ * basicly it used for X,Y,Z cordinates.
+ * 
+ */
 class Vector
 {
 private:

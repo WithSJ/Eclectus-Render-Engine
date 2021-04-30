@@ -3,11 +3,13 @@
 
 #include "vector.h"
 
+/**
+ * @brief Ray is Define by a Point and Direction this ray we use as Light Rays to 
+ * hit object get there propertis and light effects 
+ * 
+ */
 class Ray
 {
-    //Define by Point and Direction
-    //Work as light that capture an object show to the camera
-    
     private:
         /* data */
     public:
