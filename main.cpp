@@ -17,7 +17,7 @@ int main(int argc, char const *argv[])
     Vector Camera(0,0,-1);
     Color col(255,0,0);
     
-    Sphere obj1(Vector(0,0,0),0.5,col);
+    Sphere obj1(Vector(0,0,0),0.3,col);
     Sphere Objects[] = {obj1};
     
     Color light_col(255,255,255);
