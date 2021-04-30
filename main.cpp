@@ -15,9 +15,10 @@ int main(int argc, char const *argv[])
     short int HEIGHT = 200;
     
     Vector Camera(0,0,-1);
-    Color col(255,0,0);
+    Color col = Color::from_hex("#ff0000");
+    Material material1(col);
     
-    Sphere obj1(Vector(0,0,0),0.3,col);
+    Sphere obj1(Vector(0,0,0),0.3,material1);
     Sphere Objects[] = {obj1};
     
     Color light_col(255,255,255);
