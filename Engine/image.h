@@ -4,6 +4,10 @@
 #include <fstream>
 #include "color.h"
 
+/**
+ * @brief Genrated Image 2d Matrix and it can write image file.
+ * 
+ */
 class Image
 {
     private:
@@ -16,7 +20,7 @@ class Image
         {   this->HEIGTH = height; // Assigen Height and Width
             this->WIDTH = width;
             
-            this->PIXCELS = new Color* [height]; // Create pixcels accorfing Height and Width
+            this->PIXCELS = new Color* [height]; // Create pixcels according Height and Width
             for (short int i = 0; i < height; i++)
             {
                 this->PIXCELS[i] = new Color [width];
@@ -29,18 +33,24 @@ class Image
             this->PIXCELS[x][y] = col;
         }
 
+        /**
+         * @brief PPM image File Format store data in char by char data 
+         * we not need any compresstion any other proccesing things for this.
+         * 
+         * @param filename 
+         */
         void write_ppm(std::string filename)
         {
             std::ofstream PPM(filename);
             if(PPM.is_open())
-            {   
+            {   // Headder for define file type and Height and Width
                 PPM << "P3 " << this->WIDTH << " " << this->HEIGTH << "\n";
-                PPM << "255\n";
+                PPM << "255\n"; // Dfine max color used
                 PPM << "#Image Render in Eclectus RayCasting Engine.\n";
                 for (short int i = 0; i < this->HEIGTH; i++)
                 {
                     for (short int j = 0; j < this->WIDTH; j++)
-                    {
+                    {   // Writing Color Value RGB sapareted by space
                         PPM << this->PIXCELS[i][j].r << " " << this->PIXCELS[i][j].g << " " << this->PIXCELS[i][j].b << " ";
                     }
                     PPM<<"\n";
