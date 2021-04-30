@@ -5,6 +5,7 @@
 
 #include "image.h"
 #include "ray.h"
+#include "material.h"
 
 /**
  * @brief Sphere is Object that we use in our 3d space 
@@ -19,14 +20,14 @@ class Sphere
     public:
         Vector Center;
         float Radius=0.0; 
-        Color Material;
+        Material _Material;
 
         Sphere(){}
-        Sphere(Vector center, float radius, Color material)
+        Sphere(Vector center, float radius, Material material)
         {
             this->Center = center;
             this->Radius = radius;
-            this->Material = material;
+            this->_Material = material;
         }
 
         /**

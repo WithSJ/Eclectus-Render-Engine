@@ -137,7 +137,7 @@ class RenderEngine
                 float NL = std::max<float>(normal.dot_product(to_light.Direction),0.0);
 
                 // Diffuse value should be in 0 to 1.0
-                float diffuse = 1.0;
+                // float diffuse = 1.0; We not Need this
                 
                 // std::cout<<object_hit.Material - (255-short(diffuse * NL * 255 ))<<"\n";
                 
@@ -150,7 +150,7 @@ class RenderEngine
                  * 255-diffusevalue now substract that from actual color of sphere
                  * 
                  */
-                color = object_hit.Material - (255-short(diffuse * NL * 255));
+                color = object_hit._Material.BaseColor - (255-short(object_hit._Material.Diffuse * NL * 255));
                 
             }
             // return object_hit.Material;
