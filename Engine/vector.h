@@ -7,6 +7,7 @@
  * @brief Vector is use for in so many place as space, point direction and other things.
  * basicly it used for X,Y,Z cordinates.
  * 
+ * @version 2.0
  */
 class Vector
 {
@@ -24,65 +25,51 @@ public:
         this->z = z;
     }
 
-    Vector operator +(Vector vec)
+    Vector operator +(const Vector& vec)
     {
-        vec.x = this->x + vec.x;
-        vec.y = this->y + vec.y;
-        vec.z = this->z + vec.z;
-        
-        return vec;
-
+        return Vector(this->x + vec.x, this->y + vec.y, this->z + vec.z);
     }
 
-    Vector operator -(Vector vec)
-    {
-        vec.x = this->x - vec.x;
-        vec.y = this->y - vec.y;
-        vec.z = this->z - vec.z;
-        
-        return vec;
-
+    Vector operator -(const Vector& vec)
+    {   
+        return Vector(this->x - vec.x, this->y - vec.y, this->z - vec.z);
     }
 
+    Vector operator *(const Vector& vec)
+    {
+        return Vector(this->x * vec.x, this->y * vec.y, this->z * vec.z);
+
+    }
     Vector operator *(float num)
     {
-        Vector vec;
-        vec.x = this->x * num;
-        vec.y = this->y * num;
-        vec.z = this->z * num;
-        
-        return vec;
+        return Vector(this->x * num, this->y * num, this->z * num);
 
+    }
+
+    Vector operator /(const Vector& vec)
+    {   
+        return Vector(this->x / vec.x, this->y / vec.y, this->z / vec.z);
     }
 
     Vector operator /(float num)
-    {   Vector vec;
-        vec.x = this->x / num;
-        vec.y = this->y / num;
-        vec.z = this->z / num;
-        
-        return vec;
+    {   
+        return Vector(this->x / num, this->y / num, this->z / num);
     }
 
-    float dot_product(Vector vec)
+    float dot_product(const Vector& vec)
     {
-        vec.x = this->x * vec.x;
-        vec.y = this->y * vec.y;
-        vec.z = this->z * vec.z;
-
-        return (vec.x + vec.y + vec.z);
+        return ((this->x * vec.x) + (this->y * vec.y) + (this->z * vec.z));
     }
 
-    float magnitude(Vector vec)
+    float magnitude(const Vector& vec)
     {
         return sqrt(dot_product(vec));
     }
 
-    Vector normalize(Vector vec_1)
+    Vector normalize( Vector& vec_1)
     {
         return vec_1 / magnitude(vec_1);
     }
-    
     
 
 };
