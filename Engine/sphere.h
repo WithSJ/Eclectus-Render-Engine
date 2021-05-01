@@ -13,6 +13,8 @@
  * using both we can genrate all surface point of sphere. 
  * 
  * It's easy to calculate and we use it for rendering testing
+ * 
+ * @version 1.1
  */
 class Sphere
 {
@@ -23,7 +25,7 @@ class Sphere
         Material _Material;
 
         Sphere(){}
-        Sphere(Vector center, float radius, Material material)
+        Sphere(const Vector& center, float radius, const Material& material)
         {
             this->Center = center;
             this->Radius = radius;
@@ -36,7 +38,7 @@ class Sphere
          * @param ray 
          * @return float 
          */
-        float intersects(Ray ray)
+        float intersects(Ray& ray)
         {
             
             
@@ -67,7 +69,7 @@ class Sphere
          * @param surface_point 
          * @return Vector 
          */
-        Vector normal(Vector surface_point)
+        Vector normal(Vector& surface_point)
         {
             return (surface_point - this->Center).normalize(surface_point);
         }

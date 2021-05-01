@@ -7,7 +7,7 @@
 /**
  * @brief Scene is a container so we can put all objects, camera, lights
  * it's work as enviroment or world that hold all things.
- * 
+ * @version 1.1
  */
 class Scene
 {
@@ -19,7 +19,7 @@ class Scene
         short int NumberOfLigths;
         short int Width, Height;
         
-        Scene(Vector camera, Sphere objects[], short int number_of_objects, Light lights[],short int number_of_ligths,short int width, short int height)
+        Scene(const Vector& camera, Sphere objects[], short int number_of_objects, Light lights[],short int number_of_ligths,short int width, short int height)
         {
             this->Camera = camera;
             this->Objects = objects;

@@ -4,7 +4,7 @@
 #include "util.h"
 /**
  * @brief Color class hold RGB values and we can mix colors or operate any +-/* with color
- * 
+ * @version  1.1
  */
 class Color 
 {
@@ -18,7 +18,7 @@ public:
         this->b = b;
     }
 
-    static Color from_hex(std::string hex_str)
+    static Color from_hex(const std::string hex_str)
     {   //Create Color RGB using color hex string 
         // string should be start from '#' (#ffffff)
 

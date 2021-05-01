@@ -6,7 +6,7 @@
 
 /**
  * @brief Genrated Image 2d Matrix and it can write image file.
- * 
+ * @version 1.1
  */
 class Image
 {
@@ -28,7 +28,7 @@ class Image
             
         }
 
-        void set_pixcel(short int x, short int y, Color col)
+        void set_pixcel(short int x, short int y, const Color& col)
         {
             this->PIXCELS[x][y] = col;
         }
@@ -39,7 +39,7 @@ class Image
          * 
          * @param filename 
          */
-        void write_ppm(std::string filename)
+        void write_ppm(const std::string filename)
         {
             std::ofstream PPM(filename);
             if(PPM.is_open())

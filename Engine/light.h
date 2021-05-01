@@ -6,7 +6,7 @@
 
 /**
  * @brief Light have Postion and Color Values using this values we can genrated light effects.
- * 
+ * @version 1.1
  */
 class Light
 {
@@ -16,7 +16,7 @@ public:
     Vector position;
     Color color;
     
-    Light(Vector position, Color color)
+    Light(const Vector& position, const Color& color)
     {
         this->position = position;
         this->color = color;

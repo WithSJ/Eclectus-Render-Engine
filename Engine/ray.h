@@ -6,7 +6,7 @@
 /**
  * @brief Ray is Define by a Point and Direction this ray we use as Light Rays to 
  * hit object get there propertis and light effects 
- * 
+ * @version  1.1
  */
 class Ray
 {
@@ -15,7 +15,7 @@ class Ray
     public:
         Vector Origin, Direction;
 
-        Ray(Vector origin, Vector direction)
+        Ray(const Vector& origin, Vector direction)
         {
             this->Origin = origin;
             this->Direction = direction.normalize(direction);

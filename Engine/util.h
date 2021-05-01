@@ -8,11 +8,11 @@
  * "#ff00ff" first char of this string '#' will ignore 
  *  after that get 2 char from string and convert that base16 value to base10 values
  * so Color value will be R = 255, G = 0, B = 255
- * 
+ * @version  1.1
  * @param hex_str 
  * @return int 
  */
-int hexToInt(std::string hex_str)
+int hexToInt(const std::string hex_str)
 {
     int x;
     std::stringstream ss;

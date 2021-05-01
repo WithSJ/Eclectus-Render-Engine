@@ -3,6 +3,11 @@
 
 #include "scene.h"
 
+/**
+ * @brief 
+ * 
+ * @version 1.1
+ */
 class RenderEngine
 {
     public:
@@ -13,7 +18,7 @@ class RenderEngine
          * @param scene 
          * @return Image 
          */
-        Image render(Scene scene)
+        Image render(Scene& scene)
         {
             /**
              * @brief Calculate Aspect Ratio for Camera and Ray.
@@ -53,13 +58,15 @@ class RenderEngine
              * @brief Calculate X and Y For Ray.
              * Ray from Camera to X and Y  2d point
              */
+            float x, y;
+
             for(short int i=0; i < scene.Height; i++)
             {
-                float y = y0 + i * ystep;
+                y = y0 + i * ystep;
                 
                 for(short int j=0; j < scene.Width; j++)
                 {
-                    float x = x0 + j * xstep;
+                    x = x0 + j * xstep;
                     //  Now we calculated X,Y 
 
                     Ray ray_cast(scene.Camera, Vector(x,y) - scene.Camera);
@@ -83,7 +90,7 @@ class RenderEngine
          * @param scene 
          * @return Color 
          */
-        Color ray_trace(Ray ray, Scene scene)
+        Color ray_trace(Ray& ray, Scene& scene)
         {
             Color color(0,0,10); // Background Color
             /**
@@ -91,17 +98,21 @@ class RenderEngine
              * hit_pos and hit normal
              * 
              */
+            Vector hit_pos, hit_normal;
+            Sphere object;
+            float distance;
+
             for(short int i = 0;i<scene.NumberOfObjects;i++)
             {
-                Sphere object = scene.Objects[i]; // first object in objects Array
-                float distance = object.intersects(ray); // first object ray intersecing distance
+                object = scene.Objects[i]; // first object in objects Array
+                distance = object.intersects(ray); // first object ray intersecing distance
                 
                 // we want min distance of object from one ray
                 if(distance >= 0.0)
                 {
                     // // Calculate Ray where hit.
-                    Vector hit_pos = ray.Origin + ray.Direction * distance;
-                    Vector hit_normal = object.normal(hit_pos);
+                    hit_pos = ray.Origin + ray.Direction * distance;
+                    hit_normal = object.normal(hit_pos);
 
                     return color_at(object,hit_pos,hit_normal,scene);
                 }
@@ -120,13 +131,14 @@ class RenderEngine
          * @param scene 
          * @return Color 
          */
-        Color color_at(Sphere object_hit, Vector hit_pos, Vector normal, Scene scene)
+        Color color_at(Sphere& object_hit, const Vector& hit_pos, Vector& normal, Scene& scene)
         {
 
             Vector to_cam = scene.Camera - hit_pos;
             Color color;
          
             // Itrate all lights 
+            float NL;
             for(short int i = 0; i < scene.NumberOfLigths; i++)
             {
                 Ray to_light = Ray(hit_pos, scene.Lights[i].position - hit_pos);
@@ -134,7 +146,7 @@ class RenderEngine
                 // Diffuse Shading (We use Lambert Shading Model for Diffuse)
 
                 // Calculate N.L(dot product) this value can't be in negative. is should be in 0 to 1.0
-                float NL = std::max<float>(normal.dot_product(to_light.Direction),0.0);
+                NL = std::max<float>(normal.dot_product(to_light.Direction),0.0);
 
                 // Diffuse value should be in 0 to 1.0
                 // float diffuse = 1.0; We not Need this
