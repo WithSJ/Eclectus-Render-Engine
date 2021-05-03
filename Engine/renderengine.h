@@ -143,18 +143,10 @@ class RenderEngine
             {
                 Ray to_light = Ray(hit_pos, scene.Lights[i].position - hit_pos);
 
-                // Diffuse Shading (We use Lambert Shading Model for Diffuse)
-
-                // Calculate N.L(dot product) this value can't be in negative. is should be in 0 to 1.0
-                NL = std::max<float>(normal.dot_product(to_light.Direction),0.0);
-
-                // Diffuse value should be in 0 to 1.0
-                // float diffuse = 1.0; We not Need this
-                
-                // std::cout<<object_hit.Material - (255-short(diffuse * NL * 255 ))<<"\n";
-                
                 /**
-                 * @brief We have N.L so we multiply it with disffuse value 
+                 * @brief Diffuse Shading (We use Lambert Shading Model for Diffuse)
+                 * 
+                 * First Calculate N.L so we multiply it with disffuse value 
                  * but problem is our Color class can hold shot int values 
                  * we need to convert it in first we multiply it with 255 than
                  * convert it with usiing short class now we can get actual values
@@ -162,7 +154,11 @@ class RenderEngine
                  * 255-diffusevalue now substract that from actual color of sphere
                  * 
                  */
-                color = object_hit._Material.BaseColor - (255-short(object_hit._Material.Diffuse * NL * 255));
+                
+                // Calculate N.L(dot product) this value can't be in negative. is should be in 0 to 1.0
+                NL = std::max<float>(normal.dot_product(to_light.Direction),0.0);
+                color = color + (object_hit._Material.BaseColor - (255-short(object_hit._Material.Diffuse * NL * 255)));
+
                 
             }
             // return object_hit.Material;
