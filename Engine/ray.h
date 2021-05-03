@@ -18,7 +18,7 @@ class Ray
         Ray(const Vector& origin, Vector direction)
         {
             this->Origin = origin;
-            this->Direction = direction.normalize(direction);
+            this->Direction = direction.normalize();
         }
 };
 

@@ -18,8 +18,8 @@ int main(int argc, char const *argv[])
     Vector v2(3,6,9);
     cout<<"Vector v1,v2 : "<< v1 <<v2<<endl;
     cout<<"Dot Product : "<< v1.dot_product(v1) << endl;
-    cout<<"Magnitude : "<< v1.magnitude(v1) << endl;
-    cout<<"Normalize : "<< v1.normalize(v1) << endl;
+    cout<<"Magnitude : "<< v1.magnitude() << endl;
+    cout<<"Normalize : "<< v1.normalize() << endl;
     cout<<"Add : "<< v1 + v2<<endl;
     cout<<"Sub : "<< v1 - v2<<endl;
     cout<<"Mul : "<< v1 * 2<<endl;
