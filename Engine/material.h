@@ -5,7 +5,7 @@
 
 /**
  * @brief Material class contain BaseColor and all Shader values.
- * @version 1.1
+ * @version 1.2
  */
 class Material
 {
@@ -16,7 +16,7 @@ public:
     float Diffuse;
     
     Material(){}
-    Material(const Color& basecolor, float diffuse=1.0)
+    Material(const Color& basecolor, float diffuse=0.8)
     {
         this->BaseColor = basecolor;
         this->Diffuse = diffuse;
