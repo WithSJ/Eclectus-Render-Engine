@@ -4,7 +4,7 @@
 #include "util.h"
 /**
  * @brief Color class hold RGB values and we can mix colors or operate any +-/* with color
- * @version  1.2
+ * @version  1.3
  */
 class Color 
 {
@@ -95,6 +95,20 @@ public:
         col.r = this->r * num;
         col.b = this->b * num;
         col.g = this->g * num;
+        
+        col.r = (col.r > 255)? 255:(col.r < 0)? 0:col.r;
+        col.b = (col.b > 255)? 255:(col.b < 0)? 0:col.b;
+        col.g = (col.g > 255)? 255:(col.g < 0)? 0:col.g;
+
+        return  col;
+    }
+    
+    Color operator *(float num)
+    {
+        Color col;
+        col.r = short(this->r * num);
+        col.b = short(this->b * num);
+        col.g = short(this->g * num);
         
         col.r = (col.r > 255)? 255:(col.r < 0)? 0:col.r;
         col.b = (col.b > 255)? 255:(col.b < 0)? 0:col.b;
