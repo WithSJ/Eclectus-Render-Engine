@@ -14,12 +14,14 @@ private:
 public:
     Color BaseColor;
     float Diffuse;
+    float Specular;
     
     Material(){}
-    Material(const Color& basecolor, float diffuse=0.8)
+    Material(const Color& basecolor, float diffuse=0.8,float specular=0.5)
     {
         this->BaseColor = basecolor;
         this->Diffuse = diffuse;
+        this->Specular = specular;
     }
     
 };

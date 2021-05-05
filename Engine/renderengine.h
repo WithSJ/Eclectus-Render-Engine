@@ -1,6 +1,8 @@
 #ifndef RENDERENGINE_H
 #define RENDERENGINE_H
 
+#include<math.h>
+
 #include "scene.h"
 
 /**
@@ -138,7 +140,7 @@ class RenderEngine
             Color color;
          
             // Itrate all lights 
-            float NL;
+            float NL,HN;
             for(short int i = 0; i < scene.NumberOfLigths; i++)
             {
                 Ray to_light = Ray(hit_pos, scene.Lights[i].position - hit_pos);
@@ -159,6 +161,15 @@ class RenderEngine
                 NL = std::max<float>(normal.dot_product(to_light.Direction),0.0);
                 color = color + (object_hit._Material.BaseColor * object_hit._Material.Diffuse * NL);
 
+                /**
+                 * @brief Specular Shading (We use Blinn-Phong Shading Model)
+                 * 
+                 */
+                
+                Vector Half_vec = (to_light.Direction + to_cam).normalize();
+                HN = std::max<float>(normal.dot_product(Half_vec) ,0.0);
+                float specularHardness = 50;
+                color = color + scene.Lights[i].color * (object_hit._Material.Specular * pow(HN, specularHardness));
                 
             }
             // return object_hit.Material;
