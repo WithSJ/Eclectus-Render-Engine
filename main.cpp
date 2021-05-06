@@ -15,17 +15,20 @@ int main(int argc, char const *argv[])
     short int HEIGHT = 200;
     
     Vector Camera(0,0,-1);
-    Color col = Color::from_hex("#ff0000");
+    Color col = Color::from_hex("#ff751a");
     Material material1(col);
-    
     Sphere obj1(Vector(0,0,0),0.3,material1);
-    Sphere Objects[] = {obj1};
+
+    Color col2 = Color::from_hex("#9fff80");
+    Material material2(col2);
+    Sphere obj2(Vector(0,5,0),5,material2);
+    Sphere Objects[] = {obj1,obj2};
     
     Color light_col(255,255,255);
     Light point_light(Vector(1.5,-0.5,-3.0),light_col);
     Light Lights[] = {point_light};
 
-    Scene scene(Camera,Objects,1,Lights,1,WIDTH,HEIGHT);
+    Scene scene(Camera,Objects,2,Lights,1,WIDTH,HEIGHT);
 
     RenderEngine engine;
 
