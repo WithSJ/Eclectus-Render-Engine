@@ -23,7 +23,7 @@ int main(int argc, char const *argv[])
     cout<<"Add : "<< v1 + v2<<endl;
     cout<<"Sub : "<< v1 - v2<<endl;
     cout<<"Mul : "<< v1 * 2<<endl;
-    cout<<"Div : "<< v2 + 3<<endl;
+    cout<<"Div : "<< v2 / 3<<endl;
 
     cout<<"\n#Dot Product v1,v2 : "<< v1.dot_product(v2) << endl;
 
@@ -43,7 +43,7 @@ int main(int argc, char const *argv[])
     cout<< "\n#Color +-*/ operator"<<endl<<endl;
     cout<<c1 <<" + "<<c2<<" : "<<c1 + c2<<endl<<endl;
     cout<<c2 <<" - "<<c1<<" : "<<c2 + c1<<endl<<endl;
-    cout<<c1 <<" * "<<2<<" : "<<c1 * 2<<endl<<endl;
+    cout<<c1 <<" * "<<2<<" : "<<c1 * short(2)<<endl<<endl;
     cout<<c2 <<" / "<<10<<" : "<<c2 / 10<<endl<<endl;
 
     cout<<"Use [] operator " <<c1<<" : "<<c1[0]<<endl;
@@ -69,8 +69,8 @@ int main(int argc, char const *argv[])
     img.set_pixcel(1,1,red+green+blue);
     cout<<red+green+blue<<endl;
 
-    img.set_pixcel(1,2,red*0);
-    cout<<red*0<<endl;
+    img.set_pixcel(1,2,red*short(0));
+    cout<<red*short(0)<<endl;
 
     
     img.write_ppm("Eclectus_test.ppm");
