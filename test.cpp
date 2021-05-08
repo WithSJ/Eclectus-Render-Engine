@@ -14,12 +14,14 @@ int main(int argc, char const *argv[])
 {
     auto start = high_resolution_clock::now();
     cout<<"#---Vector class---\n\n";
-    Vector v1(1,-2,-2);
-    Vector v2(3,6,9);
+    Vector v1(1,2);
+    Vector v2(5,1);
     cout<<"Vector v1,v2 : "<< v1 <<v2<<endl;
     cout<<"Dot Product : "<< v1.dot_product(v1) << endl;
-    cout<<"Magnitude : "<< v1.magnitude() << endl;
-    cout<<"Normalize : "<< v1.normalize() << endl;
+    cout<<"Magnitude from 0 : "<< v1.magnitude() << endl;
+    cout<<"Normalize from 0: "<< v1.normalize() << endl;
+    cout<<"Magnitude from v2: "<< v1.magnitude(v2) << endl;
+    cout<<"Normalize from v2: "<< v1.normalize(v2) << endl;
     cout<<"Add : "<< v1 + v2<<endl;
     cout<<"Sub : "<< v1 - v2<<endl;
     cout<<"Mul : "<< v1 * 2<<endl;
