@@ -100,6 +100,23 @@ class RenderEngine
              * hit_pos and hit normal
              * 
              */
+
+            Sphere t;
+            for (short i = 0; i < scene.NumberOfObjects -1; i++)
+            {
+                // Sort all Objects according to there magnitude
+                // we need this
+                float a = scene.Objects[i].Center.magnitude();
+                float b = scene.Objects[i+1].Center.magnitude();
+                if( a > b )
+                {
+                    t = scene.Objects[i];
+                    scene.Objects[i] = scene.Objects[i+1];
+                    scene.Objects[i+1] = t;
+
+                }
+            }
+
             Vector hit_pos, hit_normal;
             Sphere object;
             float distance;
