@@ -7,7 +7,7 @@
  * @brief Vector is use for in so many place as space, point direction and other things.
  * basicly it used for X,Y,Z cordinates.
  * 
- * @version 2.1
+ * @version 2.2
  */
 class Vector
 {
@@ -62,13 +62,24 @@ public:
     }
 
     float magnitude()
-    {
+    {   //This method calculate magnitude (length) from 0,0,0
         return sqrt(dot_product(Vector(this->x,this->y,this->z)));
     }
 
+    float magnitude(Vector& point)
+    {   //This method calculate magnitude (length) from point Vector
+        Vector delta_xyz = Vector(this->x,this->y,this->z) - point;
+        return sqrt(delta_xyz.dot_product(delta_xyz));
+    }
+
     Vector normalize()
-    {
+    {   // normalize (direction) calculated from 0,0,0 vector
         return Vector(this->x,this->y,this->z) / this->magnitude();
+    }
+
+    Vector normalize(Vector& point)
+    {   // normalize (direction) calculated from point vector
+        return Vector(this->x,this->y,this->z) / this->magnitude(point);
     }
     
 
