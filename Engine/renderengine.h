@@ -136,6 +136,11 @@ class RenderEngine
                     return color_at(object,hit_pos,hit_normal,scene);
                 }
             }
+
+            Vector dir = ray.Origin.normalize();
+            float tt = 0.5 * (dir.y + 1.0);
+            color = Color(255,255,255) * float(1.0-tt) + Color(short(255*0.5),short(255*0.7),short(255)) * float(tt);
+
             
             return color;
         }
