@@ -5,7 +5,7 @@
 
 /**
  * @brief Material class contain BaseColor and all Shader values.
- * @version 1.2
+ * @version 1.3
  */
 class Material
 {
@@ -22,6 +22,11 @@ public:
         this->BaseColor = basecolor;
         this->Diffuse = diffuse;
         this->Specular = specular;
+    }
+
+    Color color_at_hit(Vector hit_pos)
+    {
+        return this->BaseColor;
     }
     
 };
