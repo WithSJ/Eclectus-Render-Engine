@@ -181,7 +181,7 @@ class RenderEngine
                 
                 // Calculate N.L(dot product) this value can't be in negative. is should be in 0 to 1.0
                 NL = std::max<float>(normal.dot_product(to_light.Direction),0.0);
-                color = color + (object_hit._Material.color_at_hit(hit_pos) * object_hit._Material.Diffuse * NL);
+                color = color + (object_hit._Material->color_at_hit(hit_pos) * object_hit._Material->Diffuse * NL);
 
                 /**
                  * @brief Specular Shading (We use Blinn-Phong Shading Model)
@@ -191,7 +191,7 @@ class RenderEngine
                 Vector Half_vec = (to_light.Direction + to_cam).normalize();
                 HN = std::max<float>(normal.dot_product(Half_vec) ,0.0);
                 float specularHardness = 50;
-                color = color + scene.Lights[i].color * (object_hit._Material.Specular * pow(HN, specularHardness));
+                color = color + scene.Lights[i].color * (object_hit._Material->Specular * pow(HN, specularHardness));
                 
             }
             // return object_hit.Material;

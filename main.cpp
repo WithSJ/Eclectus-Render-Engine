@@ -17,17 +17,21 @@ int main(int argc, char const *argv[])
     Vector Camera(0, 0, -1);
 
     Color col = Color::from_hex("#0000ff");
-    Material material1(col);
+    Material* material1 = new Material(col);
     Sphere obj1(Vector(-0.75, -0.1, 2.25),0.6,material1);
 
     Color col3 = Color::from_hex("#803880");
-    Material material3(col3);
+    Material* material3 = new Material(col3);
     Sphere obj3(Vector(0.75, -0.1, 1) ,0.6,material3);
 
     // Ground
+    Color wh = Color::from_hex("#ffffff");
+    Color bk = Color::from_hex("#000000");
+    Material* mat = new CheckerMaterial(wh,bk);
+
     Color Gcol = Color::from_hex("#00ff00");
     Material material2(Gcol);
-    Sphere obj2(Vector(0,10000,0),10000,material2);
+    Sphere obj2(Vector(0,10000,100),10000,mat);
     
     
     Sphere Objects[] = {obj1,obj2,obj3};    

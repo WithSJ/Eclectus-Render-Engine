@@ -22,10 +22,10 @@ class Sphere
     public:
         Vector Center;
         float Radius=0.0; 
-        Material _Material;
+        Material* _Material;
 
         Sphere(){}
-        Sphere(const Vector& center, float radius, const Material& material)
+        Sphere(const Vector& center, float radius,  Material* material)
         {
             this->Center = center;
             this->Radius = radius;
